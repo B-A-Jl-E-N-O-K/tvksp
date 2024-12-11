@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zverev-ikbo-20-21
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zverev-ikbo-20-21
+  template:
+    metadata:
+      labels:
+        app: zverev-ikbo-20-21
+    spec:
+      containers:
+      - name: zverev-ikbo-20-21-container
+        image: zverev-ikbo-20-21-obraz
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
